@@ -1,0 +1,8 @@
+{
+  "name": "monaco-fm-987",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": { "build": "echo 'Static site ready'" },
+  "dependencies": { "@netlify/blobs": "^8.1.0" }
+}

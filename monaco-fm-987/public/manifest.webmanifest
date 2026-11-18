@@ -1,0 +1,13 @@
+{
+  "name": "MONACO FM 98.7",
+  "short_name": "MONACO FM",
+  "description": "Escuchá MONACO FM 98.7 en vivo",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#090303",
+  "theme_color": "#bd0000",
+  "icons": [
+    {"src":"/assets/nomaco.png","sizes":"192x192","type":"image/png"},
+    {"src":"/assets/nomaco.png","sizes":"512x512","type":"image/png"}
+  ]
+}

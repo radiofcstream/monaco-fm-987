@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#b90000"><meta name="description" content="MONACO FM 98.7 — Escuchanos en vivo, noticias y programación.">
+<title>MONACO FM 98.7 — En vivo</title>
+<link rel="icon" type="image/png" href="/assets/nomaco.png"><link rel="apple-touch-icon" href="/assets/nomaco.png">
+<link rel="manifest" href="/manifest.webmanifest"><link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="socials"><a href="#" aria-label="Facebook">f</a><a href="#" aria-label="Instagram">◎</a><a href="#" aria-label="YouTube">▶</a></div>
+  <div class="brand"><img src="/assets/nomaco.png" alt="MONACO FM 98.7" onerror="this.style.display='none'"><div class="brand-fallback"><span>MONACO</span><b>FM 98.7</b></div></div>
+  <div class="tagline">LA RADIO QUE TE ACOMPAÑA</div>
+</header>
+<nav class="nav">
+  <button class="hamb" id="menuBtn" aria-label="Abrir menú">☰</button>
+  <div class="navlinks" id="navlinks"><a href="#inicio">INICIO</a><a href="#noticias">NOTICIAS</a><a href="#programacion">PROGRAMACIÓN</a><a href="#radio">ESCUCHANOS</a></div>
+  <button class="share navshare" id="shareBtn">↗ <span>COMPARTIR</span></button>
+</nav>
+<main id="inicio">
+  <section class="hero" aria-label="Portadas de MONACO FM">
+    <div class="hero-slides">
+      <img class="hero-slide active" src="/assets/portada1.png" alt="MONACO FM portada 1">
+      <img class="hero-slide" src="/assets/portada2.png" alt="MONACO FM portada 2">
+      <img class="hero-slide" src="/assets/portada3.png" alt="MONACO FM portada 3">
+      <img class="hero-slide" src="/assets/portada4.png" alt="MONACO FM portada 4">
+      <div class="hero-shade"></div><div class="hero-copy"><span class="eyebrow">RADIO EN VIVO</span><h1>MONACO FM <strong>98.7</strong></h1><p>Noticias, música y toda la actualidad.</p><a href="#radio" class="listen-cta">▶ ESCUCHANOS EN VIVO</a></div>
+      <div class="dots"><button class="dot active" aria-label="Portada 1"></button><button class="dot" aria-label="Portada 2"></button><button class="dot" aria-label="Portada 3"></button><button class="dot" aria-label="Portada 4"></button></div>
+    </div>
+  </section>
+  <section class="section" id="noticias"><div class="section-head"><div><span class="eyebrow red">ACTUALIDAD</span><h2>Últimas noticias</h2></div><span class="section-line"></span></div><div class="news-grid" id="newsGrid"><div class="empty">Próximamente, las noticias de MONACO FM.</div></div></section>
+  <section class="section schedule-section" id="programacion"><div class="section-head"><div><span class="eyebrow red">AL AIRE</span><h2>Nuestra programación</h2></div><span class="section-line"></span></div><div id="programGrid" class="program-grid"><div class="empty">Muy pronto vas a conocer nuestra programación.</div></div></section>
+  <section class="about"><div class="about-logo"><img src="/assets/nomaco.png" alt="MONACO FM" onerror="this.style.display='none'"></div><div><span class="eyebrow">CONECTADOS CON VOS</span><h2>MONACO FM 98.7</h2><p>Tu compañía, tu música y la información que necesitás. Escuchanos en cualquier momento.</p></div></section>
+</main>
+<footer>© <span id="year"></span> MONACO FM 98.7 · Todos los derechos reservados</footer>
+<div class="player" id="radio"><button class="play" id="playBtn" aria-label="Reproducir">▶</button><div class="player-info"><b id="playerStatus">EN VIVO · MONACO FM 98.7</b><span id="playerHint">Presioná reproducir para escuchar la radio</span><div class="equalizer"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div><img class="player-logo" src="/assets/nomaco.png" alt=""><div class="volume">♫ <input id="volume" type="range" min="0" max="1" step=".05" value=".85" aria-label="Volumen"></div><audio id="audio" preload="none" src="/radio-stream"></audio></div>
+<button class="admin-secret" id="adminOpen" title="Administración" aria-label="Administración"></button>
+<div class="modal hidden" id="loginModal"><div class="modal-card login-card"><button class="close" data-close="loginModal">×</button><span class="eyebrow red">ACCESO PRIVADO</span><h2>Administración</h2><form id="loginForm"><label>Contraseña<input type="password" id="password" autocomplete="current-password" required></label><p class="form-error" id="loginError"></p><button class="red-btn">INGRESAR</button></form></div></div>
+<div class="admin-panel hidden" id="adminPanel"><div class="admin-top"><div><span class="eyebrow">PANEL PRIVADO</span><h2>MONACO FM · Administración</h2></div><button class="outline-btn" id="logoutBtn">Cerrar sesión</button></div><div class="admin-tabs"><button class="tab active" data-tab="news">Noticias</button><button class="tab" data-tab="programs">Programación</button></div>
+<section class="admin-section" id="tab-news"><h3>Publicar noticia</h3><form id="newsForm" class="editor-form"><input type="hidden" id="newsId"><label>Título<input id="newsTitle" required maxlength="120" placeholder="Título de la noticia"></label><label>Texto<textarea id="newsText" rows="4" placeholder="Escribí la noticia..."></textarea></label><label>Fotografía<input type="file" id="newsPhoto" accept="image/*"></label><img id="newsPreview" class="preview hidden" alt="Vista previa"><div class="form-actions"><button class="red-btn">GUARDAR Y PUBLICAR</button><button type="button" class="outline-btn" id="newsCancel">Limpiar</button></div></form><h3>Noticias publicadas</h3><div id="newsAdminList" class="admin-list"></div></section>
+<section class="admin-section hidden" id="tab-programs"><h3>Agregar programa</h3><form id="programForm" class="editor-form"><input type="hidden" id="programId"><label>Nombre del conductor<input id="hostName" placeholder="Nombre del conductor"></label><label>Título del programa<input id="programTitle" required placeholder="Nombre del programa"></label><label>Texto / descripción (opcional)<textarea id="programText" rows="3" placeholder="Información del programa"></textarea></label><label>Fotografía (opcional)<input type="file" id="programPhoto" accept="image/*"></label><img id="programPreview" class="preview hidden" alt="Vista previa"><div class="form-actions"><button class="red-btn">GUARDAR PROGRAMACIÓN</button><button type="button" class="outline-btn" id="programCancel">Limpiar</button></div></form><h3>Programas cargados</h3><div id="programAdminList" class="admin-list"></div></section><p class="save-status" id="saveStatus" role="status"></p></div>
+<script src="/app.js"></script>
+</body></html>
